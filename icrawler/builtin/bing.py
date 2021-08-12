@@ -151,13 +151,13 @@ class BingImageCrawler(Crawler):
               max_size=None,
               file_idx_offset=0,
               overwrite=False):
-        if offset + max_num > 1000:
-            if offset > 1000:
+        if offset + max_num > 10000:
+            if offset > 10000:
                 self.logger.error('Offset cannot exceed 1000, otherwise you '
                                   'will get duplicated searching results.')
                 return
-            elif max_num > 1000:
-                max_num = 1000 - offset
+            elif max_num > 10000:
+                max_num = 10000 - offset
                 self.logger.warning('Due to Bing\'s limitation, you can only '
                                     'get the first 1000 result. "max_num" has '
                                     'been automatically set to %d',
